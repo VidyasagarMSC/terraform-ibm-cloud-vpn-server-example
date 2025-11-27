@@ -1,6 +1,6 @@
 variable "sm_region" {
   type    = string
-  default = "eu-gb"
+  default = "us-south"
 }
 
 variable "vpc_region" {
@@ -10,5 +10,5 @@ variable "vpc_region" {
 
 variable "zone_name" {
   type = string
-  default = "us-south-2"
+  default = "us-south-1"
 }

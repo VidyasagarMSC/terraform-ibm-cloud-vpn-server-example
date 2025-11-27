@@ -3,3 +3,5 @@ terraform.tfstate*
 .terraform*
 temp
 my_vpn_server.ovpn
+.DS_Store
+.vscode/settings.json

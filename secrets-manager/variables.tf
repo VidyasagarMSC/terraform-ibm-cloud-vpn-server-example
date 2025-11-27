@@ -1,6 +1,6 @@
 variable "region_name" {
   type    = string
-  default = "eu-gb"
+  default = "us-south"
 }
 
 variable "service_plan" {

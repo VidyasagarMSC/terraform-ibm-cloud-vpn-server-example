@@ -16,6 +16,9 @@ resource "ibm_resource_instance" "sec_mgr" {
   plan              = var.service_plan
   location          = var.region_name
   resource_group_id = data.ibm_resource_group.group.id
+  parameters = {
+    "allowed_network" = "public-and-private"  # ← This is CORRECT for Secrets Manager
+  }
 
   //User can increase timeouts
   timeouts {

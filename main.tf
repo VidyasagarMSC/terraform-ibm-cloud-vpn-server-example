@@ -33,11 +33,18 @@ resource "ibm_is_subnet" "subnet" {
 
 resource "ibm_is_vpn_server" "example" {
   certificate_crn = module.secmgr.import_cert_server_crn
+
   client_authentication {
     method        = "certificate"
     client_ca_crn = module.secmgr.import_cert_client_crn
   }
-  client_ip_pool         = "192.167.0.0/16"
+
+  client_authentication {
+    method            = "username"
+    identity_provider = "iam"
+  }
+
+  client_ip_pool         = "192.168.0.0/16"
   enable_split_tunneling = true
   name                   = "terry-vpn-server"
   port                   = 443
